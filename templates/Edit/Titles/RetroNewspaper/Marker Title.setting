@@ -1,0 +1,550 @@
+{
+	Tools = ordered() {
+		MarkerTitle1 = MacroOperator {
+			Inputs = ordered() {
+                Input29 = InstanceInput {
+					SourceOp = "Control",
+					Source = "NumberIn3",
+					Default = 3.8,
+                    Page = "Controls"
+				},
+                Input32 = InstanceInput {
+					SourceOp = "Control",
+					Source = "InvertDirection",
+					Page = "Controls",
+					Default = 0,
+				},
+                Input21 = InstanceInput {
+					SourceOp = "MarkerMask",
+					Source = "Level",
+					Name = "Opacity",
+					Default = 1,
+                    Page = "Marker"
+				},
+				Input22 = InstanceInput {
+					SourceOp = "MarkerMask",
+					Source = "Width",
+					Default = 0.559,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "MarkerMask",
+					Source = "Height",
+					Default = 0.188,
+				},
+				Input24 = InstanceInput {
+					SourceOp = "MarkerBG",
+					Source = "Type",
+				},
+				Input25 = InstanceInput {
+					SourceOp = "MarkerBG",
+					Source = "TopLeftRed",
+					Name = "Color",
+					ControlGroup = 17,
+					Default = 0.9098039215686,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "MarkerBG",
+					Source = "TopLeftGreen",
+					ControlGroup = 17,
+					Default = 0.6941176470588,
+				},
+				Input27 = InstanceInput {
+					SourceOp = "MarkerBG",
+					Source = "TopLeftBlue",
+					ControlGroup = 17,
+					Default = 0.4745098039216,
+				},
+				Input28 = InstanceInput {
+					SourceOp = "MarkerBG",
+					Source = "TopLeftAlpha",
+					ControlGroup = 17,
+					Default = 1,
+				},
+				Input33 = InstanceInput {
+					SourceOp = "MarkerAnimation",
+					Source = "Curve",
+					Name = "Animation",
+				},
+				Input34 = InstanceInput {
+					SourceOp = "MarkerAnimation",
+					Source = "EaseIn",
+					Name = "Ease In",
+					Width = 0.5,
+				},
+				Input35 = InstanceInput {
+					SourceOp = "MarkerAnimation",
+					Source = "EaseOut",
+					Name = "Ease Out",
+					Width = 0.5,
+				},
+                Input39 = InstanceInput {
+					SourceOp = "TextMask",
+					Source = "Level",
+					Name = "Opacity",
+					Default = 1,
+                    Page = "Text",
+				},
+				Input1 = InstanceInput {
+					SourceOp = "Headline",
+					Source = "StyledText",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Headline",
+					Source = "Font",
+					ControlGroup = 2,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Headline",
+					Source = "Style",
+					ControlGroup = 2,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Headline",
+					Source = "Red1Clone",
+					Name = "Color",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Headline",
+					Source = "Green1Clone",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Headline",
+					Source = "Blue1Clone",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Headline",
+					Source = "Alpha1Clone",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Headline",
+					Source = "Size",
+					Default = 0.1142,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Headline",
+					Source = "CharacterSpacingClone",
+					Name = "Tracking",
+					Default = 1.1,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Headline",
+					Source = "LineSpacingClone",
+					Default = 1,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Headline",
+					Source = "VerticalJustificationTop",
+					Name = "V Anchor",
+					ControlGroup = 7,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "Headline",
+					Source = "VerticalJustificationCenter",
+					ControlGroup = 7,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "Headline",
+					Source = "VerticalJustificationBottom",
+					ControlGroup = 7,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "Headline",
+					Source = "VerticalTopCenterBottom",
+					Default = 0,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "Headline",
+					Source = "HorizontalJustificationLeft",
+					Name = "H Anchor",
+					ControlGroup = 9,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "Headline",
+					Source = "HorizontalJustificationCenter",
+					ControlGroup = 9,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "Headline",
+					Source = "HorizontalJustificationRight",
+					ControlGroup = 9,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "Headline",
+					Source = "HorizontalLeftCenterRight",
+					Default = 0,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "Headline",
+					Source = "ForceMonospaced",
+					Default = 0,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "Headline",
+					Source = "UseLigatures",
+					Default = 1,
+				},
+                Input31 = InstanceInput {
+					SourceOp = "Control",
+					Source = "NumberIn5",
+					Default = 1.5,
+				},
+				Input36 = InstanceInput {
+					SourceOp = "TextAnimation",
+					Source = "Curve",
+					Name = "Animation",
+				},
+				Input37 = InstanceInput {
+					SourceOp = "TextAnimation",
+					Source = "EaseIn",
+					Name = "Ease In",
+					Width = 0.5,
+				},
+				Input38 = InstanceInput {
+					SourceOp = "TextAnimation",
+					Source = "EaseOut",
+					Name = "Ease Out",
+					Width = 0.5,
+				},
+                Input30 = InstanceInput {
+					SourceOp = "Control",
+					Source = "NumberIn4",
+					Name = "Ahead of Marker",
+					Default = 0.6,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				Transform1 = Transform {
+					CtrlWShown = false,
+					Inputs = {
+						Center = Input { Expression = "Point(0.5, 0.5-(2*Control.InvertDirection-1)*TextMask.Height*(1-Control.NumberIn2))", },
+						Input = Input {
+							SourceOp = "Headline",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 760, 44.9394 } },
+				},
+				Headline = TextPlus {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						CharacterSpacing = Input { Value = 1.1, },
+						StyledText = Input { Value = "My Title", },
+						Font = Input { Value = "Montserrat", },
+						Style = Input { Value = "Black", },
+						Size = Input { Value = 0.1142, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						TabSpacing = Input { Value = 1, },
+						AdvancedFontControls = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 760, -33.3333 } },
+				},
+				MarkerMask = RectangleMask {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Width = Input { Value = 0.559, },
+						Height = Input { Value = 0.188, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 463.333, 63.1212 } },
+				},
+				Rectangle1 = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						Invert = Input { Value = 1, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input { Expression = "Point(MarkerMask.Center.X-MarkerMask.Width/2+Width/2, MarkerMask.Center.Y)", },
+						Width = Input {
+							Value = 0.559,
+							Expression = "MarkerMask.Width *Control.NumberIn1",
+						},
+						Height = Input {
+							Value = 0.188,
+							Expression = "MarkerMask.Height",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 588, 66.1515 } },
+				},
+				Merge1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "TextMask",
+							Source = "Mask",
+						},
+						Background = Input {
+							SourceOp = "MatteControl1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Transform1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 760, 122.833 } },
+				},
+				MatteControl1 = MatteControl {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "Rectangle1",
+							Source = "Mask",
+						},
+						MatteCombine = Input { Value = 6, },
+						CombineOp = Input { Value = 1, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						["Solid.MaskNest"] = Input { Value = 1, },
+						PostMultiplyImage = Input { Value = 1, },
+						Background = Input {
+							SourceOp = "MarkerBG",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 610.667, 122.833 } },
+				},
+				MarkerBG = Background {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "MarkerMask",
+							Source = "Mask",
+						},
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.9098039215686, },
+						TopLeftGreen = Input { Value = 0.6941176470588, },
+						TopLeftBlue = Input { Value = 0.4745098039216, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 463.333, 122.833 } },
+				},
+				Control = Custom {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						NumberIn1 = Input {
+							SourceOp = "MarkerAnimation",
+							Source = "Value",
+						},
+						NumberIn2 = Input {
+							SourceOp = "TextAnimation",
+							Source = "Value",
+						},
+						NumberIn3 = Input { Value = 3.8, },
+						NumberIn4 = Input { Value = 0.6, },
+						NumberIn5 = Input { Value = 1.5, },
+						LUTControlsNest = Input { Value = 1, },
+						LUTIn1 = Input {
+							SourceOp = "ControlLUTIn1",
+							Source = "Value",
+						},
+						LUTIn2 = Input {
+							SourceOp = "ControlLUTIn2",
+							Source = "Value",
+						},
+						LUTIn3 = Input {
+							SourceOp = "ControlLUTIn3",
+							Source = "Value",
+						},
+						LUTIn4 = Input {
+							SourceOp = "ControlLUTIn4",
+							Source = "Value",
+						},
+						AuxChannelNest = Input { Value = 1, },
+						NumberControls = Input { Value = 1, },
+						NameforNumber1 = Input { Value = "Marker Position", },
+						NameforNumber2 = Input { Value = "Text Position", },
+						NameforNumber3 = Input { Value = "Speed", },
+						NameforNumber4 = Input { Value = "Text Earlyness", },
+						NameforNumber5 = Input { Value = "Extra Visible Space", },
+						ShowNumber6 = Input { Value = 0, },
+						ShowNumber7 = Input { Value = 0, },
+						ShowNumber8 = Input { Value = 0, },
+						PointControls = Input { Value = 1, },
+						ShowPoint1 = Input { Value = 0, },
+						ShowPoint2 = Input { Value = 0, },
+						ShowPoint3 = Input { Value = 0, },
+						ShowPoint4 = Input { Value = 0, },
+						LUTControls = Input { Value = 1, },
+						ShowLUT1 = Input { Value = 0, },
+						ShowLUT2 = Input { Value = 0, },
+						ShowLUT3 = Input { Value = 0, },
+						ShowLUT4 = Input { Value = 0, },
+						InvertDirection = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 890, 24.9394 } },
+					UserControls = ordered() {
+						InvertDirection = {
+							INP_MaxAllowed = 1,
+							INP_Integer = true,
+							INPID_InputControl = "CheckboxControl",
+							INP_MaxScale = 1,
+							INP_Default = 1,
+							INP_MinScale = 0,
+							INP_MinAllowed = 0,
+							LINKID_DataType = "Number",
+							ICS_ControlPage = "Controls",
+							CBC_TriState = false,
+							LINKS_Name = "Invert Direction"
+						}
+					}
+				},
+				MarkerAnimation = LUTLookup {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Source = Input { Value = FuID { "Duration" }, },
+						Curve = Input { Value = FuID { "Easing" }, },
+						EaseIn = Input { Value = FuID { "Cubic" }, },
+						EaseOut = Input { Value = FuID { "Cubic" }, },
+						Lookup = Input {
+							SourceOp = "AnimCurves1Lookup",
+							Source = "Value",
+						},
+						TimeScale = Input {
+							Value = 3.8,
+							Expression = "Control.NumberIn3",
+						},
+					},
+				},
+				AnimCurves1Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				TextAnimation = LUTLookup {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Source = Input { Value = FuID { "Duration" }, },
+						Curve = Input { Value = FuID { "Easing" }, },
+						EaseIn = Input { Value = FuID { "Cubic" }, },
+						EaseOut = Input { Value = FuID { "Cubic" }, },
+						Lookup = Input {
+							SourceOp = "AnimCurves1Lookup1",
+							Source = "Value",
+						},
+						TimeScale = Input {
+							Value = 4.4,
+							Expression = "Control.NumberIn3 + Control.NumberIn4",
+						},
+					},
+				},
+				AnimCurves1Lookup1 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				ControlLUTIn1 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 204, Green = 0, Blue = 0 },
+					CtrlWZoom = false,
+				},
+				ControlLUTIn2 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 0, Green = 204, Blue = 0 },
+					CtrlWZoom = false,
+				},
+				ControlLUTIn3 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 0, Green = 0, Blue = 204 },
+					CtrlWZoom = false,
+				},
+				ControlLUTIn4 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 204, Green = 204, Blue = 204 },
+					CtrlWZoom = false,
+				},
+				TextMask = RectangleMask {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input { Expression = "Point(0.5, 0.5)", },
+						Width = Input {
+							Value = 0.559,
+							Expression = "MarkerMask.Width",
+						},
+						Height = Input {
+							Value = 0.1713,
+							Expression = "Headline.Size*Control.NumberIn5",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 760, 187.97 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "MarkerTitle1"
+}

@@ -1,0 +1,325 @@
+{
+	Tools = ordered() {
+		TemporaryTextMarker = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "MarkerMaskOutro",
+					Source = "Level",
+					Name = "Opacity",
+					Default = 1,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "MarkerMaskOutro",
+					Source = "Height",
+					Default = 0.126,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "MarkerBG",
+					Source = "Type",
+				},
+				Input4 = InstanceInput {
+					SourceOp = "MarkerBG",
+					Source = "TopLeftRed",
+					Name = "Color",
+					ControlGroup = 4,
+					Default = 0.9333333333333,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "MarkerBG",
+					Source = "TopLeftGreen",
+					ControlGroup = 4,
+					Default = 0.9333333333333,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "MarkerBG",
+					Source = "TopLeftBlue",
+					ControlGroup = 4,
+					Default = 0,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "MarkerBG",
+					Source = "TopLeftAlpha",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "MarkerLocation",
+					Source = "NumberIn3",
+					Default = 2,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "MarkerLocation",
+					Source = "NumberIn5",
+					Default = 2,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "MarkerIntro",
+					Source = "Curve",
+					Name = "Intro Animation",
+				},
+				Input11 = InstanceInput {
+					SourceOp = "MarkerIntro",
+					Source = "EaseIn",
+					Name = "Intro Ease In",
+					Width = 0.5,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "MarkerIntro",
+					Source = "EaseOut",
+					Name = "Intro Ease Out",
+					Width = 0.5,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "MarkerOutro",
+					Source = "Curve",
+					Name = "Outro Animation",
+				},
+				Input14 = InstanceInput {
+					SourceOp = "MarkerOutro",
+					Source = "EaseIn",
+					Name = "Outro Ease In",
+					Width = 0.5,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "MarkerOutro",
+					Source = "EaseOut",
+					Name = "Outro Ease Out",
+					Width = 0.5,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "RemovalMatt",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				MarkerMaskOutro = RectangleMask {
+					NameSet = true,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input {
+							Value = { 0.404508497187473, 0.5 },
+							Expression = "Point(MarkerLocation.NumberIn2-0.5, 0.5)",
+						},
+						Width = Input { Value = 1, },
+						Height = Input { Value = 0.126, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 51.2708, -66.8636 } },
+				},
+				RemovalMatt = MatteControl {
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "MarkerMaskOutro",
+							Source = "Mask",
+						},
+						MatteCombine = Input { Value = 5, },
+						CombineOp = Input { Value = 1, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						InvertMatte = Input { Value = 1, },
+						PostMultiplyImage = Input { Value = 1, },
+						Background = Input {
+							SourceOp = "MarkerBG",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 160, 49.5 } },
+				},
+				MarkerMaskIntro = RectangleMask {
+					NameSet = true,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input { Expression = "Point(MarkerLocation.NumberIn1-0.5, 0.5)", },
+						Width = Input { Value = 1, },
+						Height = Input { Value = 0.126, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -108, 49.5 } },
+				},
+				MarkerBG = Background {
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "MarkerMaskIntro",
+							Source = "Mask",
+						},
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.9333333333333, },
+						TopLeftGreen = Input { Value = 0.9333333333333, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 10.6042, 49.5 } },
+				},
+				MarkerLocation = Custom {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						NumberIn1 = Input {
+							SourceOp = "MarkerIntro",
+							Source = "Value",
+						},
+						NumberIn2 = Input {
+							SourceOp = "MarkerOutro",
+							Source = "Value",
+						},
+						NumberIn3 = Input { Value = 2, },
+						NumberIn5 = Input { Value = 2, },
+						LUTIn1 = Input {
+							SourceOp = "MarkerLocationLUTIn1",
+							Source = "Value",
+						},
+						LUTIn2 = Input {
+							SourceOp = "MarkerLocationLUTIn2",
+							Source = "Value",
+						},
+						LUTIn3 = Input {
+							SourceOp = "MarkerLocationLUTIn3",
+							Source = "Value",
+						},
+						LUTIn4 = Input {
+							SourceOp = "MarkerLocationLUTIn4",
+							Source = "Value",
+						},
+						NumberControls = Input { Value = 1, },
+						NameforNumber1 = Input { Value = "Location Marker 1", },
+						NameforNumber2 = Input { Value = "Location Marker 2", },
+						NameforNumber3 = Input { Value = "Intro Speed", },
+						ShowNumber4 = Input { Value = 0, },
+						NameforNumber4 = Input { Value = "Intro Offset", },
+						NameforNumber5 = Input { Value = "Outro Speed", },
+						ShowNumber6 = Input { Value = 0, },
+						NameforNumber6 = Input { Value = "Outro Offset", },
+						ShowNumber7 = Input { Value = 0, },
+						ShowNumber8 = Input { Value = 0, },
+						PointControls = Input { Value = 1, },
+						ShowPoint1 = Input { Value = 0, },
+						ShowPoint2 = Input { Value = 0, },
+						ShowPoint3 = Input { Value = 0, },
+						ShowPoint4 = Input { Value = 0, },
+						LUTControls = Input { Value = 1, },
+						ShowLUT1 = Input { Value = 0, },
+						ShowLUT2 = Input { Value = 0, },
+						ShowLUT3 = Input { Value = 0, },
+						ShowLUT4 = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 250.667, -26.5757 } },
+				},
+				MarkerIntro = LUTLookup {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Source = Input { Value = FuID { "Duration" }, },
+						Curve = Input { Value = FuID { "Easing" }, },
+						EaseIn = Input { Value = FuID { "Cubic" }, },
+						EaseOut = Input { Value = FuID { "Cubic" }, },
+						Lookup = Input {
+							SourceOp = "AnimCurvesonMarkerLocationLookup",
+							Source = "Value",
+						},
+						TimeScale = Input {
+							Value = 2,
+							Expression = "MarkerLocation.NumberIn3",
+						},
+					},
+				},
+				AnimCurvesonMarkerLocationLookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				MarkerOutro = LUTLookup {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Source = Input { Value = FuID { "Duration" }, },
+						Curve = Input { Value = FuID { "Easing" }, },
+						EaseIn = Input { Value = FuID { "Cubic" }, },
+						EaseOut = Input { Value = FuID { "Cubic" }, },
+						Lookup = Input {
+							SourceOp = "AnimCurves2Lookup_1",
+							Source = "Value",
+						},
+						Timing = Input { Value = 0, },
+						TimeScale = Input {
+							Value = 3,
+							Expression = "MarkerLocation.NumberIn5",
+						},
+						TimeOffset = Input {
+							Value = 0.666666666666667,
+							Expression = "1-(1/MarkerLocation.NumberIn5)",
+						},
+					},
+				},
+				AnimCurves2Lookup_1 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				MarkerLocationLUTIn1 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 204, Green = 0, Blue = 0 },
+					CtrlWZoom = false,
+				},
+				MarkerLocationLUTIn2 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 0, Green = 204, Blue = 0 },
+					CtrlWZoom = false,
+				},
+				MarkerLocationLUTIn3 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 0, Green = 0, Blue = 204 },
+					CtrlWZoom = false,
+				},
+				MarkerLocationLUTIn4 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 204, Green = 204, Blue = 204 },
+					CtrlWZoom = false,
+				}
+			},
+		}
+	},
+	ActiveTool = "TemporaryTextMarker"
+}

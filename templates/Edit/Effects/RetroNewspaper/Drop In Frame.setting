@@ -1,0 +1,565 @@
+{
+	Tools = ordered() {
+		DropInFrame11 = MacroOperator {
+			Inputs = ordered() {
+                Input7 = InstanceInput {
+					SourceOp = "Controls",
+					Source = "PointIn1",
+                    Name = "Center",
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Controls",
+					Source = "NumberIn1",
+					Default = 0.75,
+                    Name = "Scale",
+				},
+                Input6 = InstanceInput {
+					SourceOp = "TurnAnimation",
+					Source = "Scale",
+					Name = "Angle",
+					Default = 0,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "StrokeColor",
+					Source = "TopLeftRed",
+					Name = "Color",
+					ControlGroup = 9,
+					Default = 1,
+                    Page = "Border",
+				},
+				Input10 = InstanceInput {
+					SourceOp = "StrokeColor",
+					Source = "TopLeftGreen",
+					ControlGroup = 9,
+					Default = 1,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "StrokeColor",
+					Source = "TopLeftBlue",
+					ControlGroup = 9,
+					Default = 1,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "StrokeColor",
+					Source = "TopLeftAlpha",
+					ControlGroup = 9,
+					Default = 1,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "ImageMask",
+					Source = "CornerRadius",
+					Default = 0.155,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "OutlineMask",
+					Source = "Filter",
+				},
+				Input15 = InstanceInput {
+					SourceOp = "OutlineMask",
+					Source = "SoftEdge",
+				},
+				Input16 = InstanceInput {
+					SourceOp = "OutlineMask",
+					Source = "Passes",
+					Default = 4,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "OutlineMask",
+					Source = "BorderWidth",
+					Default = 0.04,
+				},
+                Input1 = InstanceInput {
+					SourceOp = "ShrinkAnimation",
+					Source = "Curve",
+					Name = "Animation",
+                    Page = "Animation",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "ShrinkAnimation",
+					Source = "EaseIn",
+					Name = "Ease In",
+					Width = 0.5,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "ShrinkAnimation",
+					Source = "EaseOut",
+					Name = "Ease Out",
+					Width = 0.5,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "ShrinkAnimation",
+					Source = "TimeScale",
+					Name = "Speed",
+					Default = 4,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "ShrinkAnimation",
+					Source = "TimeOffset",
+					Name = "Animation Offset",
+					Default = 0,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				MediaIn1 = MediaIn {
+					ExtentSet = true,
+					CtrlWShown = false,
+					CustomData = {
+						MediaProps = {
+							MEDIA_PAR = 1,
+							MEDIA_HEIGHT = 1080,
+							COMP_ID = 2329,
+							MEDIA_SRC_FRAME_RATE = 24,
+							MEDIA_MARK_OUT = 119,
+							MEDIA_WIDTH = 1920,
+							MEDIA_NUM_FRAMES = 120,
+							MEDIA_MARK_IN = 0,
+							MEDIA_START_FRAME = 0
+						},
+					},
+					Inputs = {
+						GlobalOut = Input { Value = 119, },
+						AudioTrack = Input { Value = FuID { "Timeline Audio" }, },
+						Layer = Input { Value = "0", },
+						ClipTimeEnd = Input { Value = 119, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						LeftAudio = Input {
+							SourceOp = "Left",
+							Source = "Data",
+						},
+						RightAudio = Input {
+							SourceOp = "Right",
+							Source = "Data",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 143.646, -124.453 } },
+				},
+				Left = AudioDisplay {
+					CtrlWZoom = false,
+				},
+				Right = AudioDisplay {
+					CtrlWZoom = false,
+				},
+				Transform2 = Transform {
+					CtrlWShown = false,
+					Inputs = {
+						Center = Input { Expression = "Point(Controls.NumberIn3, Controls.NumberIn4)", },
+						Size = Input {
+							SourceOp = "ShrinkAnimation",
+							Source = "Value",
+						},
+						Angle = Input {
+							SourceOp = "TurnAnimation",
+							Source = "Value",
+						},
+						Input = Input {
+							SourceOp = "MediaIn1",
+							Source = "Output",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { 143.646, -62.8858 } },
+				},
+				ShrinkAnimation = LUTLookup {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Source = Input { Value = FuID { "Duration" }, },
+						Curve = Input { Value = FuID { "Easing" }, },
+						EaseIn = Input { Value = FuID { "Quad" }, },
+						EaseOut = Input { Value = FuID { "Sine" }, },
+						Lookup = Input {
+							SourceOp = "ShrinkAnimationLookup",
+							Source = "Value",
+						},
+						Scale = Input {
+							Value = -0.292465753424658,
+							Expression = "1-(Offset-Controls.NumberIn1)-1",
+						},
+						Offset = Input {
+							Value = 1.04246575342466,
+							Expression = "1.0+OutlineMask.CornerRadius/3.65",
+						},
+						TimeScale = Input { Value = 4, },
+					},
+				},
+				ShrinkAnimationLookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				TurnAnimation = LUTLookup {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Source = Input { Value = FuID { "Duration" }, },
+						Curve = Input { Value = FuID { "Easing" }, },
+						EaseIn = Input {
+							Value = FuID { "Quad" },
+							Expression = "ShrinkAnimation.EaseIn",
+						},
+						EaseOut = Input {
+							Value = FuID { "Sine" },
+							Expression = "ShrinkAnimation.EaseOut",
+						},
+						Lookup = Input {
+							SourceOp = "AnimCurves1Lookup",
+							Source = "Value",
+						},
+						Scale = Input { Value = 0, },
+						TimeScale = Input {
+							Value = 4,
+							Expression = "ShrinkAnimation.TimeScale",
+						},
+						TimeOffset = Input { Expression = "ShrinkAnimation.TimeOffset", },
+					},
+				},
+				AnimCurves1Lookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				Merge1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "ImageMaskTransform",
+							Source = "Output",
+						},
+						Background = Input {
+							SourceOp = "Merge2",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Transform2",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 143.646, 8.94758 } },
+				},
+				Merge2 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "Background1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "StrokeColor",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -50.354, 8.94758 } },
+				},
+				Background1 = Background {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftAlpha = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -230.355, 8.94758 } },
+				},
+				Controls = Custom {
+					CtrlWZoom = false,
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						NumberIn1 = Input { Value = 0.75, },
+						NumberIn3 = Input {
+							SourceOp = "AnimCenterX",
+							Source = "Value",
+						},
+						NumberIn4 = Input {
+							SourceOp = "AnimCenterY",
+							Source = "Value",
+						},
+						LUTIn1 = Input {
+							SourceOp = "ControlsLUTIn1",
+							Source = "Value",
+						},
+						LUTIn2 = Input {
+							SourceOp = "ControlsLUTIn2",
+							Source = "Value",
+						},
+						LUTIn3 = Input {
+							SourceOp = "ControlsLUTIn3",
+							Source = "Value",
+						},
+						LUTIn4 = Input {
+							SourceOp = "ControlsLUTIn4",
+							Source = "Value",
+						},
+						NumberControls = Input { Value = 1, },
+						NameforNumber1 = Input { Value = "Final Scale", },
+						ShowNumber2 = Input { Value = 0, },
+						NameforNumber2 = Input { Value = "Final Rotation", },
+						NameforNumber3 = Input { Value = "Center X", },
+						NameforNumber4 = Input { Value = "Center Y", },
+						ShowNumber5 = Input { Value = 0, },
+						ShowNumber6 = Input { Value = 0, },
+						ShowNumber7 = Input { Value = 0, },
+						ShowNumber8 = Input { Value = 0, },
+						PointControls = Input { Value = 1, },
+						NameforPoint1 = Input { Value = "Final Center", },
+						ShowPoint2 = Input { Value = 0, },
+						ShowPoint3 = Input { Value = 0, },
+						ShowPoint4 = Input { Value = 0, },
+						LUTControls = Input { Value = 1, },
+						ShowLUT1 = Input { Value = 0, },
+						ShowLUT2 = Input { Value = 0, },
+						ShowLUT3 = Input { Value = 0, },
+						ShowLUT4 = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 261.338, -61.1487 } },
+				},
+				AnimCenterX = LUTLookup {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Source = Input { Value = FuID { "Duration" }, },
+						Curve = Input { Value = FuID { "Easing" }, },
+						EaseIn = Input {
+							Value = FuID { "Quad" },
+							Expression = "ShrinkAnimation.EaseIn",
+						},
+						EaseOut = Input {
+							Value = FuID { "Sine" },
+							Expression = "ShrinkAnimation.EaseOut",
+						},
+						Lookup = Input {
+							SourceOp = "AnimCurves1Lookup1",
+							Source = "Value",
+						},
+						Scale = Input {
+							Value = 0,
+							Expression = "Controls.PointIn1.X-Offset",
+						},
+						Offset = Input { Value = 0.5, },
+						TimeScale = Input {
+							Value = 4,
+							Expression = "ShrinkAnimation.TimeScale",
+						},
+						TimeOffset = Input { Expression = "ShrinkAnimation.TimeOffset", },
+					},
+				},
+				AnimCurves1Lookup1 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				AnimCenterY = LUTLookup {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Curve = Input {
+							Value = FuID { "Easing" },
+							Expression = "AnimCenterX.Curve",
+						},
+						EaseIn = Input {
+							Value = FuID { "Quad" },
+							Expression = "AnimCenterX.EaseIn",
+						},
+						EaseOut = Input {
+							Value = FuID { "Sine" },
+							Expression = "AnimCenterX.EaseOut",
+						},
+						Lookup = Input {
+							SourceOp = "AnimCurves1Lookup2",
+							Source = "Value",
+						},
+						Scale = Input {
+							Value = 0,
+							Expression = "Controls.PointIn1.Y-Offset",
+						},
+						Offset = Input {
+							Value = 0.5,
+							Expression = "AnimCenterX.Offset",
+						},
+						TimeScale = Input {
+							Value = 4,
+							Expression = "AnimCenterX.TimeScale",
+						},
+						TimeOffset = Input { Expression = "AnimCenterX.TimeOffset", },
+					},
+				},
+				AnimCurves1Lookup2 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				ControlsLUTIn1 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 204, Green = 0, Blue = 0 },
+					CtrlWZoom = false,
+				},
+				ControlsLUTIn2 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 0, Green = 204, Blue = 0 },
+					CtrlWZoom = false,
+				},
+				ControlsLUTIn3 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 0, Green = 0, Blue = 204 },
+					CtrlWZoom = false,
+				},
+				ControlsLUTIn4 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 204, Green = 204, Blue = 204 },
+					CtrlWZoom = false,
+				},
+				StrokeColor = Background {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "OutlineMaskTransform",
+							Source = "Output",
+						},
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 1, },
+						TopLeftGreen = Input { Value = 1, },
+						TopLeftBlue = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -50.354, 47.7352 } },
+				},
+				ImageMaskTransform = Transform {
+					CtrlWShown = false,
+					NameSet = true,
+					SourceOp = "Transform2",
+					Inputs = {
+						EffectMask = Input { },
+						SettingsNest = Input { },
+						TransformNest = Input { },
+						Center = Input { Expression = "Point(Controls.NumberIn3, Controls.NumberIn4)" },
+						ReferenceSize = Input { },
+						Input = Input {
+							SourceOp = "ImageMask",
+							Source = "Mask",
+						},
+						CommentsNest = Input { },
+						FrameRenderScriptNest = Input { },
+						StartRenderScripts = Input { },
+						EndRenderScripts = Input { },
+					},
+					ViewInfo = OperatorInfo { Pos = { 143.646, 112.933 } },
+				},
+				OutlineMaskTransform = Transform {
+					CtrlWShown = false,
+					NameSet = true,
+					SourceOp = "ImageMaskTransform",
+					Inputs = {
+						EffectMask = Input { },
+						SettingsNest = Input { },
+						TransformNest = Input { },
+						Center = Input { Expression = "Point(Controls.NumberIn3, Controls.NumberIn4)" },
+						ReferenceSize = Input { },
+						Input = Input {
+							SourceOp = "OutlineMask",
+							Source = "Mask",
+						},
+						CommentsNest = Input { },
+						FrameRenderScriptNest = Input { },
+						StartRenderScripts = Input { },
+						EndRenderScripts = Input { },
+					},
+					ViewInfo = OperatorInfo { Pos = { -50.354, 113.479 } },
+				},
+				ImageMask = RectangleMask {
+					CtrlWShown = false,
+					NameSet = true,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Width = Input { Value = 1, },
+						Height = Input {
+							Value = 1,
+							Expression = "Width",
+						},
+						CornerRadius = Input { Value = 0.155, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 143.646, 167.418 } },
+				},
+				OutlineMask = RectangleMask {
+					CtrlWShown = false,
+					NameSet = true,
+					SourceOp = "ImageMask",
+					Inputs = {
+						EffectMask = Input { },
+						SettingsNest = Input { },
+						SoftEdge = Input { },
+						BorderWidth = Input { Value = 0.04, },
+						Solid = Input { Value = 0, },
+						Height = Input {
+							Value = 1,
+							Expression = "Width"
+						},
+						["ShapeRasterizer.Nest"] = Input { },
+						CommentsNest = Input { },
+						FrameRenderScriptNest = Input { },
+						StartRenderScripts = Input { },
+						EndRenderScripts = Input { },
+					},
+					ViewInfo = OperatorInfo { Pos = { -50.354, 165.873 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "DropInFrame11"
+}

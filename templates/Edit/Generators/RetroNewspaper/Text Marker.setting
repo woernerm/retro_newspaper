@@ -1,0 +1,223 @@
+{
+	Tools = ordered() {
+		TextMarker = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "MarkerMask",
+					Source = "Level",
+					Name = "Opacity",
+					Default = 1,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "MarkerMask",
+					Source = "Height",
+					Default = 0.126,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "MarkerBG",
+					Source = "Type",
+				},
+				Input4 = InstanceInput {
+					SourceOp = "MarkerBG",
+					Source = "TopLeftRed",
+					Name = "Color",
+					ControlGroup = 4,
+					Default = 0.9333333333333,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "MarkerBG",
+					Source = "TopLeftGreen",
+					ControlGroup = 4,
+					Default = 0.9333333333333,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "MarkerBG",
+					Source = "TopLeftBlue",
+					ControlGroup = 4,
+					Default = 0,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "MarkerBG",
+					Source = "TopLeftAlpha",
+					ControlGroup = 4,
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Animation",
+					Source = "Curve",
+					Name = "Animation",
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Animation",
+					Source = "EaseIn",
+					Name = "Ease In",
+					Width = 0.5,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Animation",
+					Source = "EaseOut",
+					Name = "Ease Out",
+					Width = 0.5,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Animation",
+					Source = "TimeScale",
+					Name = "Speed",
+					Default = 2,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "MarkerBG",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				MarkerMask = RectangleMask {
+					NameSet = true,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input { Expression = "Point(MarkerLocation.NumberIn1-0.5, 0.5)", },
+						Width = Input { Value = 1, },
+						Height = Input { Value = 0.126, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -32, -21.1212 } },
+				},
+				MarkerBG = Background {
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "MarkerMask",
+							Source = "Mask",
+						},
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.9333333333333, },
+						TopLeftGreen = Input { Value = 0.9333333333333, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -32, 50.1061 } },
+				},
+				MarkerLocation = Custom {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						NumberIn1 = Input {
+							SourceOp = "Animation",
+							Source = "Value",
+						},
+						LUTIn1 = Input {
+							SourceOp = "AnimCurveWorkaroundLUTIn1",
+							Source = "Value",
+						},
+						LUTIn2 = Input {
+							SourceOp = "AnimCurveWorkaroundLUTIn2",
+							Source = "Value",
+						},
+						LUTIn3 = Input {
+							SourceOp = "AnimCurveWorkaroundLUTIn3",
+							Source = "Value",
+						},
+						LUTIn4 = Input {
+							SourceOp = "AnimCurveWorkaroundLUTIn4",
+							Source = "Value",
+						},
+						NumberControls = Input { Value = 1, },
+						NameforNumber1 = Input { Value = "Location", },
+						NameforNumber2 = Input { Value = "Opacity", },
+						ShowNumber3 = Input { Value = 0, },
+						ShowNumber4 = Input { Value = 0, },
+						ShowNumber5 = Input { Value = 0, },
+						ShowNumber6 = Input { Value = 0, },
+						ShowNumber7 = Input { Value = 0, },
+						ShowNumber8 = Input { Value = 0, },
+						PointControls = Input { Value = 1, },
+						ShowPoint1 = Input { Value = 0, },
+						ShowPoint2 = Input { Value = 0, },
+						ShowPoint3 = Input { Value = 0, },
+						ShowPoint4 = Input { Value = 0, },
+						LUTControls = Input { Value = 1, },
+						ShowLUT1 = Input { Value = 0, },
+						ShowLUT2 = Input { Value = 0, },
+						ShowLUT3 = Input { Value = 0, },
+						ShowLUT4 = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 146, -26.5757 } },
+				},
+				Animation = LUTLookup {
+					CtrlWZoom = false,
+					NameSet = true,
+					Inputs = {
+						Source = Input { Value = FuID { "Duration" }, },
+						Curve = Input { Value = FuID { "Easing" }, },
+						EaseIn = Input { Value = FuID { "Cubic" }, },
+						EaseOut = Input { Value = FuID { "Cubic" }, },
+						Lookup = Input {
+							SourceOp = "AnimationLookup",
+							Source = "Value",
+						},
+						TimeScale = Input { Value = 2, },
+					},
+				},
+				AnimationLookup = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 255, Green = 255, Blue = 255 },
+					CtrlWZoom = false,
+				},
+				AnimCurveWorkaroundLUTIn1 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 204, Green = 0, Blue = 0 },
+					CtrlWZoom = false,
+				},
+				AnimCurveWorkaroundLUTIn2 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 0, Green = 204, Blue = 0 },
+					CtrlWZoom = false,
+				},
+				AnimCurveWorkaroundLUTIn3 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 0, Green = 0, Blue = 204 },
+					CtrlWZoom = false,
+				},
+				AnimCurveWorkaroundLUTIn4 = LUTBezier {
+					KeyColorSplines = {
+						[0] = {
+							[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
+							[1] = { 1, LH = { 0.666666666666667, 0.666666666666667 }, Flags = { Linear = true } }
+						}
+					},
+					SplineColor = { Red = 204, Green = 204, Blue = 204 },
+					CtrlWZoom = false,
+				}
+			},
+		}
+	},
+	ActiveTool = "TextMarker"
+}
