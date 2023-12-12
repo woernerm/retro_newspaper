@@ -13,3 +13,7 @@ and [Work Sans](https://fonts.google.com/specimen/Work+Sans?query=work+sans), re
 Here is a [demo video](https://youtu.be/Wpnb_xEjAeo) of all elements:
 
 [![Demo Video](https://img.youtube.com/vi/Wpnb_xEjAeo/0.jpg)](https://www.youtube.com/watch?v=Wpnb_xEjAeo)
+
+## Installation
+1) Download the [released drfx file](https://github.com/woernerm/retro_newspaper/releases/download/v1.0.0/RetroNewspaper.drfx).
+2) Double click it to start the installation. Done. ;)
