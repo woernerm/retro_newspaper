@@ -11,4 +11,4 @@ free and open source fonts I found are [Playfair Display](https://fonts.google.c
 and [Work Sans](https://fonts.google.com/specimen/Work+Sans?query=work+sans), respectively.
 
 Here is a demo of all elements:
-[![Demo Video](https://img.youtube.com/vi/Wpnb_xEjAeo/maxresdefault.jpg)](https://www.youtube.com/watch?v=Wpnb_xEjAeo)
+[![Demo Video](https://img.youtube.com/vi/Wpnb_xEjAeo/sddefault.jpg)](https://www.youtube.com/watch?v=Wpnb_xEjAeo)
