@@ -12,4 +12,4 @@ and [Work Sans](https://fonts.google.com/specimen/Work+Sans?query=work+sans), re
 
 Here is a [demo video](https://youtu.be/Wpnb_xEjAeo) of all elements:
 
-[![Demo Video](https://img.youtube.com/vi/Wpnb_xEjAeo/hqdefault.jpg)](https://www.youtube.com/watch?v=Wpnb_xEjAeo)
+[![Demo Video](https://img.youtube.com/vi/Wpnb_xEjAeo/0.jpg)](https://www.youtube.com/watch?v=Wpnb_xEjAeo)
