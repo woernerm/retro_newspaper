@@ -16,4 +16,4 @@ Here is a [demo video](https://youtu.be/Wpnb_xEjAeo) of all elements:
 
 ## Installation
 1) Download the [released drfx file](https://github.com/woernerm/retro_newspaper/releases/download/v1.0.0/RetroNewspaper.drfx).
-2) Double click it to start the installation. Done. ;)
+2) Double click it to start the installation. Enjoy. ;)
