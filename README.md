@@ -10,5 +10,6 @@ for titles and [Balto](https://fonts.adobe.com/fonts/balto) for text. The most s
 free and open source fonts I found are [Playfair Display](https://fonts.google.com/specimen/Playfair+Display)
 and [Work Sans](https://fonts.google.com/specimen/Work+Sans?query=work+sans), respectively.
 
-Here is a demo of all elements:
+Here is a [demo video](https://youtu.be/Wpnb_xEjAeo) of all elements:
+
 [![Demo Video](https://img.youtube.com/vi/Wpnb_xEjAeo/hqdefault.jpg)](https://www.youtube.com/watch?v=Wpnb_xEjAeo)
