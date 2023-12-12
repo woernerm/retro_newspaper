@@ -11,4 +11,4 @@ free and open source fonts I found are [Playfair Display](https://fonts.google.c
 and [Work Sans](https://fonts.google.com/specimen/Work+Sans?query=work+sans), respectively.
 
 Here is a demo of all elements:
-<iframe width="728" height="410" src="https://www.youtube.com/embed/Wpnb_xEjAeo?si=171dhnfYVJoNjqAt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+[![Demo Video](https://img.youtube.com/vi/Wpnb_xEjAeo/maxresdefault.jpg)](https://www.youtube.com/watch?v=Wpnb_xEjAeo)
